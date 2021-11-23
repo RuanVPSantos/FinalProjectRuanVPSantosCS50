@@ -10,18 +10,50 @@
 </head>
 <body>
     <div id='tela'>
+        <div id="escurecer"></div>
         <div class="central">
             <div id='div_frase'>
                 <h1 id='frase_inicial'>
-                    Alguém pode se encantar com suas palavras.
+                    Encante alguém com suas palavras.
                 </h1>
             </div>
-            <a href=''>
-                <div id='botao'>
-                    Confira já!
-                </div>
-            </a>
+            <div class='container'>
+                <div id='logo'></div>
+                <a href=''>
+                    <div id='botao'>
+                        Confira já!
+                    </div>
+                </a>
+            </div>   
         </div>
     </div>
+    <script>
+        var botao = document.querySelector("#botao")
+        var escurecer = document.querySelector('#escurecer')
+        botao.addEventListener('mouseover', function()
+        {
+            if (botao.classList.contains('desselecionado'))
+            {
+                botao.classList.replace('desselecionado', 'selecionado')
+            }
+            else
+            {
+                botao.classList.add('selecionado');
+            }
+            if (escurecer.classList.contains('enclarecido'))
+            {
+                escurecer.classList.replace('enclarecido', 'escurecido');
+            }
+            else
+            {
+                escurecer.classList.add('escurecido');
+            }
+        })
+        botao.addEventListener('mouseout', function()
+        {
+            botao.classList.replace('selecionado', 'desselecionado')
+            escurecer.classList.replace('escurecido', 'enclarecido');
+        })
+    </script>
 </body>
 </html>
